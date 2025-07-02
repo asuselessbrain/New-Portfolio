@@ -1,4 +1,5 @@
-import { Calendar, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Calendar, ArrowRight, Clock, User } from 'lucide-react';
 import ViewAllButton from '../shared/ViewAllButton';
 
 const blogPosts = [
@@ -8,7 +9,9 @@ const blogPosts = [
     excerpt: 'Learn how to structure and build maintainable React applications using TypeScript for better developer experience and code quality.',
     date: '2024-01-15',
     readTime: '5 min read',
-    image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=800'
+    author: 'Arfan Ahmed',
+    category: 'React',
+    image: 'https://www.curotec.com/wp-content/uploads/2024/10/top-uses-for-react-e1729004277386.jpg?w=1024'
   },
   {
     id: 2,
@@ -16,7 +19,9 @@ const blogPosts = [
     excerpt: 'Explore the latest CSS features and techniques to create responsive, accessible, and performant web designs.',
     date: '2024-01-10',
     readTime: '7 min read',
-    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800'
+    author: 'Arfan Ahmed',
+    category: 'CSS',
+    image: 'https://blog.openreplay.com/images/a-top-collection-of-css-code-generators/images/hero.png'
   },
   {
     id: 3,
@@ -24,7 +29,9 @@ const blogPosts = [
     excerpt: 'Essential best practices and patterns for building robust Node.js applications ready for production deployment.',
     date: '2024-01-05',
     readTime: '8 min read',
-    image: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800'
+    author: 'Arfan Ahmed',
+    category: 'Node.js',
+    image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=800'
   }
 ];
 
@@ -41,7 +48,7 @@ const Blog = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {blogPosts.map((post) => (
-            <article key={post.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+            <article key={post.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
               <div className="relative overflow-hidden">
                 <img
                   src={post.image}
@@ -49,6 +56,11 @@ const Blog = () => {
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">
+                    {post.category}
+                  </span>
+                </div>
               </div>
               
               <div className="p-6">
@@ -56,6 +68,7 @@ const Blog = () => {
                   <Calendar size={16} className="mr-2" />
                   <span>{new Date(post.date).toLocaleDateString()}</span>
                   <span className="mx-2">•</span>
+                  <Clock size={16} className="mr-1" />
                   <span>{post.readTime}</span>
                 </div>
                 
@@ -65,15 +78,24 @@ const Blog = () => {
                 
                 <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
                 
-                <button className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors">
-                  Read More
-                  <ArrowRight className="ml-1" size={16} />
-                </button>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <User size={16} className="mr-1" />
+                    <span>{post.author}</span>
+                  </div>
+                  <Link
+                    to={`/blog/${post.id}`}
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+                  >
+                    Read More
+                    <ArrowRight className="ml-1" size={16} />
+                  </Link>
+                </div>
               </div>
             </article>
           ))}
         </div>
-        <ViewAllButton buttonText='View All Posts' link='projects' />
+        <ViewAllButton buttonText='View All Posts' link='blogs' />
       </div>
     </section>
   );

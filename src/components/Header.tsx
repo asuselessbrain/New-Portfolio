@@ -103,27 +103,27 @@ const Header = () => {
             <Link to="/projects" className={navClass('projects')}>
               Projects
             </Link>
-            <button onClick={() => scrollToSection('blog')} className={navClass('blog')}>
-              Blog
-            </button>
+            <Link to="/blogs" className={navClass('blogs')}>
+              Blogs
+            </Link>
             <Link to="/contact" className={navClass('contact')}>
               Contact
             </Link>
             <button
-                onClick={() => {
-                  handleDownloadResume();
-                  setIsMenuOpen(false);
-                }}
-                className="relative overflow-hidden block w-full text-left px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold transition-transform duration-300 hover:scale-105 shadow-lg group"
-              >
-                {/* Sliding gradient overlay */}
-                <span className="absolute inset-0 bg-gradient-to-r from-indigo-700 via-purple-700 to-indigo-700 transition-transform duration-500 transform -translate-x-full group-hover:translate-x-0 z-0" />
+              onClick={() => {
+                handleDownloadResume();
+                setIsMenuOpen(false);
+              }}
+              className="relative overflow-hidden block w-full text-left px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold transition-transform duration-300 hover:scale-105 shadow-lg group"
+            >
+              {/* Sliding gradient overlay */}
+              <span className="absolute inset-0 bg-gradient-to-r from-indigo-700 via-purple-700 to-indigo-700 transition-transform duration-500 transform -translate-x-full group-hover:translate-x-0 z-0" />
 
-                {/* Button text */}
-                <span className="relative z-10 transition-colors duration-500 group-hover:text-white">
-                  Resume
-                </span>
-              </button>
+              {/* Button text */}
+              <span className="relative z-10 transition-colors duration-500 group-hover:text-white">
+                Resume
+              </span>
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -165,12 +165,13 @@ const Header = () => {
               >
                 Projects
               </Link>
-              <button
-                onClick={() => scrollToSection('blog')}
-                className={navClass('blog') + ' block'}
+              <Link
+                to="/blogs"
+                className={navClass('blogs') + ' block'}
+                onClick={() => setIsMenuOpen(false)}
               >
-                Blog
-              </button>
+                Blogs
+              </Link>
               <Link
                 to="/contact"
                 className={navClass('contact') + ' block'}
