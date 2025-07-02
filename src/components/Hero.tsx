@@ -1,4 +1,4 @@
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Download, Facebook, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
   const handleDownloadResume = () => {
@@ -69,6 +69,45 @@ const Hero = () => {
               </span>
             </button>
           </div>
+
+          <div className="flex space-x-4 mt-8 justify-center lg:justify-start">
+  {[
+    {
+      href: 'https://github.com/asuselessbrain',
+      icon: <Github size={28} />,
+    },
+    {
+      href: 'https://www.linkedin.com/in/arfan-ahmed40',
+      icon: <Linkedin size={28} />,
+    },
+    {
+      href: 'https://www.facebook.com/arfan.arfanahmed.73',
+      icon: <Facebook size={28} />,
+    },
+    {
+      href: 'mailto:arfan18@cse.pstu.ac.bd',
+      icon: <Mail size={28} />,
+    },
+  ].map(({ href, icon }, index) => (
+    <a
+      key={index}
+      href={href}
+      target={href.startsWith('mailto:') ? undefined : '_blank'}
+      rel={href.startsWith('mailto:') ? 'noreferrer' : 'noopener noreferrer'}
+      className="relative w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center overflow-hidden transition-all duration-300 shadow-md group"
+    >
+      {/* Background gradient overlay */}
+      <span className="absolute inset-0 bg-gradient-to-t from-blue-600 via-indigo-600 to-purple-600 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+      {/* Icon */}
+      <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+        {icon}
+      </span>
+    </a>
+  ))}
+</div>
+
+
+
         </div>
       </div>
     </section>
