@@ -24,7 +24,9 @@ const projectData = {
     ],
     date: '2024-05-01',
     duration: '2.5 months',
-    category: 'Full Stack'
+    category: 'Full Stack',
+    liveUrl: 'https://auto-sphere-ashy.vercel.app',
+    gitHubUrl: 'https://github.com/asuselessbrain/car-store-client.git'
   },
   2: {
     title: 'MediCare Medical Camp Management System',
@@ -47,7 +49,9 @@ const projectData = {
     ],
     date: '2024-04-15',
     duration: '2 months',
-    category: 'Full Stack'
+    category: 'Full Stack',
+    liveUrl: 'https://medicare-kohl.vercel.app',
+    gitHubUrl: 'https://github.com/asuselessbrain/medicare-client'
   },
   3: {
     title: 'CareerCove Job Hunt Portal',
@@ -69,7 +73,9 @@ const projectData = {
     ],
     date: '2024-03-10',
     duration: '2 months',
-    category: 'Full Stack'
+    category: 'Full Stack',
+    liveUrl: 'https://career-cove.netlify.app',
+    gitHubUrl: 'https://github.com/asuselessbrain/career-cove-job-seeking-website-client'
   },
   4: {
     title: 'Pastel Cityscapes Gallery',
@@ -90,7 +96,9 @@ const projectData = {
     ],
     date: '2024-02-01',
     duration: '1.5 months',
-    category: 'Full Stack'
+    category: 'Full Stack',
+    liveUrl: 'https://pastel-cityscapes.netlify.app',
+    gitHubUrl: ''
   }
 };
 
@@ -152,14 +160,18 @@ const ProjectDetail = () => {
             </div>
 
             <div className="flex gap-4 mb-8">
-              <button className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+              <a href={project.liveUrl} target='_blank'>
+                <button className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
                 <ExternalLink className="mr-2" size={20} />
                 Live Demo
               </button>
-              <button className="inline-flex items-center px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition-colors">
+              </a>
+              <a href={project.gitHubUrl} target='_blank'>
+                <button className="inline-flex items-center px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition-colors">
                 <Github className="mr-2" size={20} />
                 View Code
               </button>
+              </a>
             </div>
 
             <div className="prose max-w-none">
