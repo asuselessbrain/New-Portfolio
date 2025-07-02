@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Github, Calendar, User } from 'lucide-react';
 
@@ -79,7 +78,8 @@ const projectData = {
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const project = projectData[id as keyof typeof projectData];
+  const numericId = Number(id);
+  const project = projectData[numericId as 1 | 2 | 3];
 
   if (!project) {
     return (

@@ -5,29 +5,32 @@ import ViewAllButton from '../shared/ViewAllButton';
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution built with MERN stack featuring user authentication, payment integration, and admin dashboard.',
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
-    liveUrl: "https://auto-sphere-ashy.vercel.app",
+    title: 'AutoSphere Car Marketplace',
+    description: 'A modern car dealership platform allowing users to explore car listings, view detailed specifications, place orders, submit reviews, and make payments with a user-friendly interface and admin controls.',
+    image: 'https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg?auto=compress&cs=tinysrgb&w=800',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'JWT', 'ShadCn', 'SurjoPay'],
+    liveUrl: 'https://auto-sphere-ashy.vercel.app',
+    gitHubUrl: 'https://github.com/asuselessbrain/car-store-client.git',
     featured: true
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates, team collaboration features, and progress tracking.',
-    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
-    technologies: ['React', 'Firebase', 'Tailwind CSS', 'Context API'],
-    liveUrl: "https://auto-sphere-ashy.vercel.app",
+    title: 'MediCare Medical Camp Management System',
+    description: 'A sophisticated platform for managing medical camps, including participant registration, organizer tools, payment requests, and admin dashboards for roles and resource control.',
+    image: 'https://www.tbsnews.net/sites/default/files/styles/infograph/public/images/2024/11/22/20241122_rajibdhar_0498.jpg',
+    technologies: ['React', 'Firebase', 'MongoDB', 'Express', 'Node.js', 'JWT', 'Tailwind CSS', 'Stripe'],
+    liveUrl: 'https://medicare-kohl.vercel.app',
+    gitHubUrl: 'https://github.com/asuselessbrain/medicare-client',
     featured: true
   },
   {
     id: 3,
-    title: 'Social Media Dashboard',
-    description: 'A comprehensive social media analytics dashboard with data visualization and performance metrics.',
-    image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
-    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Chart.js'],
-    liveUrl: "https://auto-sphere-ashy.vercel.app",
+    title: 'CareerCove Job Hunt Portal',
+    description: 'A professional job search application that allows users to explore job listings, filter by job type and location, and view detailed job descriptions with salary insights and responsibilities.',
+    image: 'https://media.licdn.com/dms/image/v2/D5612AQHmWpsKqCEUgQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1692110377639?e=2147483647&v=beta&t=8o8pbq1bZtrQjOZxyCis8GkK8FtHx38WqMoea3qjPB0',
+    technologies: ['React', 'Firebase', 'MongoDB', 'Express', 'Node.js', 'JWT', 'Tailwind CSS'],
+    liveUrl: 'https://career-cove.netlify.app',
+    gitHubUrl: 'https://github.com/asuselessbrain/career-cove-job-seeking-website-client',
     featured: true
   }
 ];
@@ -56,21 +59,22 @@ const FeaturedProjects = () => {
                 <div className="absolute top-4 right-4 space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a href={project.liveUrl} target='_blank'>
                     <button className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors">
-                    <ExternalLink size={16} className="text-gray-700" />
-                  </button>
+                      <ExternalLink size={16} className="text-gray-700" />
+                    </button>
                   </a>
-                  <a href="#">
+                  <a href={project.gitHubUrl} target='_blank'>
                     <button className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors">
-                    <Github size={16} className="text-gray-700" />
-                  </button>
+                      <Github size={16} className="text-gray-700" />
+                    </button>
                   </a>
                 </div>
               </div>
-              
+
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title.length > 28 ? project.title.slice(0, 25) + " " + "...." : project.title}
+                </h3>
                 <p className="text-gray-600 mb-4 line-clamp-3">{project.description}</p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
                     <span
@@ -81,7 +85,7 @@ const FeaturedProjects = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 <Link
                   to={`/project/${project.id}`}
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors"
