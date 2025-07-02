@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, Clock, User, Share2, Heart, MessageCircle, Tag } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
 
 const blogData = {
   1: {
@@ -1745,10 +1745,6 @@ const BlogDetail = () => {
                 <Calendar className="mr-2" size={16} />
                 <span>{new Date(blog.date).toLocaleDateString()}</span>
               </div>
-              <div className="flex items-center">
-                <Clock className="mr-2" size={16} />
-                <span>{blog.readTime}</span>
-              </div>
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">
@@ -1761,23 +1757,6 @@ const BlogDetail = () => {
                   {tag}
                 </span>
               ))}
-            </div>
-
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <button className="flex items-center text-gray-600 hover:text-red-600 transition-colors">
-                  <Heart className="mr-1" size={16} />
-                  <span>{blog.likes}</span>
-                </button>
-                <button className="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
-                  <MessageCircle className="mr-1" size={16} />
-                  <span>{blog.comments}</span>
-                </button>
-              </div>
-              <button className="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
-                <Share2 className="mr-1" size={16} />
-                <span>Share</span>
-              </button>
             </div>
           </div>
         </div>
