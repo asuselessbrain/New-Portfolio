@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { getTechIcon } from './TechIcons';
-import './skills.css';
 import ViewAllButton from '../shared/ViewAllButton';
 
 const skills = [

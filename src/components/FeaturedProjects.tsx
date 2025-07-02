@@ -9,6 +9,7 @@ const projects = [
     description: 'A full-stack e-commerce solution built with MERN stack featuring user authentication, payment integration, and admin dashboard.',
     image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
     technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
+    liveUrl: "https://auto-sphere-ashy.vercel.app",
     featured: true
   },
   {
@@ -17,6 +18,7 @@ const projects = [
     description: 'A collaborative task management application with real-time updates, team collaboration features, and progress tracking.',
     image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
     technologies: ['React', 'Firebase', 'Tailwind CSS', 'Context API'],
+    liveUrl: "https://auto-sphere-ashy.vercel.app",
     featured: true
   },
   {
@@ -25,6 +27,7 @@ const projects = [
     description: 'A comprehensive social media analytics dashboard with data visualization and performance metrics.',
     image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
     technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Chart.js'],
+    liveUrl: "https://auto-sphere-ashy.vercel.app",
     featured: true
   }
 ];
@@ -51,12 +54,16 @@ const FeaturedProjects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute top-4 right-4 space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors">
+                  <a href={project.liveUrl} target='_blank'>
+                    <button className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors">
                     <ExternalLink size={16} className="text-gray-700" />
                   </button>
-                  <button className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors">
+                  </a>
+                  <a href="#">
+                    <button className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors">
                     <Github size={16} className="text-gray-700" />
                   </button>
+                  </a>
                 </div>
               </div>
               
