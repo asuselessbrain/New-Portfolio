@@ -3,75 +3,93 @@ import { ArrowLeft, ExternalLink, Github, Calendar, User } from 'lucide-react';
 
 const projectData = {
   1: {
-    title: 'E-Commerce Platform',
-    description: 'A comprehensive e-commerce solution built with the MERN stack, featuring complete user authentication, secure payment processing, and a robust admin dashboard for inventory management.',
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe', 'JWT', 'Bcrypt'],
+    title: 'AutoSphere Car Marketplace',
+    description: 'A modern car dealership platform allowing users to explore car listings, view detailed specifications, place orders, submit reviews, and make payments with a user-friendly interface and admin controls.',
+    image: 'https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg?auto=compress&cs=tinysrgb&w=800',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'JWT', 'ShadCn', 'SurjoPay'],
     features: [
-      'User registration and authentication',
-      'Product catalog with search and filtering',
-      'Shopping cart and checkout process',
-      'Secure payment integration with Stripe',
-      'Order tracking and history',
-      'Admin dashboard for product management',
-      'Responsive design for all devices'
+      'Car browsing with detailed specs and images',
+      'User authentication and authorization',
+      'Place and manage car orders',
+      'Submit and view car reviews',
+      'Admin dashboard for inventory control',
+      'Payment integration using SurjoPay',
+      'Responsive and accessible design'
     ],
     challenges: [
-      'Implementing secure payment processing',
-      'Creating an intuitive admin interface',
-      'Optimizing database queries for performance',
-      'Ensuring mobile responsiveness'
+      'Integrating custom payment gateway (SurjoPay)',
+      'Building a scalable admin dashboard',
+      'Managing user roles and permissions securely',
+      'Handling real-time order and review data'
     ],
-    date: '2024-01-15',
-    duration: '3 months',
+    date: '2024-05-01',
+    duration: '2.5 months',
     category: 'Full Stack'
   },
   2: {
-    title: 'Task Management App',
-    description: 'A collaborative task management application designed to enhance team productivity with real-time updates, comprehensive project tracking, and seamless team collaboration features.',
-    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    technologies: ['React', 'Firebase', 'Tailwind CSS', 'Context API', 'React Router'],
+    title: 'MediCare Medical Camp Management System',
+    description: 'A sophisticated platform for managing medical camps, including participant registration, organizer tools, payment requests, and admin dashboards for roles and resource control.',
+    image: 'https://www.tbsnews.net/sites/default/files/styles/infograph/public/images/2024/11/22/20241122_rajibdhar_0498.jpg',
+    technologies: ['React', 'Firebase', 'MongoDB', 'Express', 'Node.js', 'JWT', 'Tailwind CSS', 'Stripe'],
     features: [
-      'Real-time task updates and notifications',
-      'Team collaboration and assignment',
-      'Project progress tracking',
-      'Drag-and-drop interface',
-      'Due date reminders',
-      'File attachments and comments',
-      'Mobile-responsive design'
+      'Medical camp registration and management',
+      'Organizer and admin dashboard',
+      'Payment processing with Stripe',
+      'Participant tracking and role assignment',
+      'Real-time data visualization',
+      'Secure login and access control'
     ],
     challenges: [
-      'Implementing real-time synchronization',
-      'Creating an intuitive drag-and-drop interface',
-      'Managing complex state with Context API',
-      'Optimizing for mobile devices'
+      'Building secure role-based dashboards',
+      'Handling dynamic form data and validation',
+      'Implementing reliable payment flow',
+      'Ensuring accessibility for medical volunteers'
     ],
-    date: '2023-12-10',
+    date: '2024-04-15',
     duration: '2 months',
-    category: 'Frontend'
+    category: 'Full Stack'
   },
   3: {
-    title: 'Social Media Dashboard',
-    description: 'A comprehensive analytics dashboard that provides deep insights into social media performance with interactive data visualizations and automated reporting features.',
-    image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Chart.js', 'Prisma', 'NextAuth'],
+    title: 'CareerCove Job Hunt Portal',
+    description: 'A professional job search application that allows users to explore job listings, filter by job type and location, and view detailed job descriptions with salary insights and responsibilities.',
+    image: 'https://media.licdn.com/dms/image/v2/D5612AQHmWpsKqCEUgQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1692110377639?e=2147483647&v=beta&t=8o8pbq1bZtrQjOZxyCis8GkK8FtHx38WqMoea3qjPB0',
+    technologies: ['React', 'Firebase', 'MongoDB', 'Express', 'Node.js', 'JWT', 'Tailwind CSS'],
     features: [
-      'Multi-platform social media integration',
-      'Interactive charts and graphs',
-      'Custom date range analytics',
-      'Automated report generation',
-      'Performance comparisons',
-      'Export data functionality',
-      'Dark/light theme support'
+      'Browse and filter jobs by category',
+      'Detailed job information pages',
+      'User login and saved job functionality',
+      'Admin can post and manage jobs',
+      'Mobile responsive and fast performance'
     ],
     challenges: [
-      'Integrating multiple social media APIs',
-      'Creating responsive data visualizations',
-      'Optimizing database queries for large datasets',
-      'Implementing efficient caching strategies'
+      'Building flexible filtering logic',
+      'Managing nested routing with React Router',
+      'Handling job data consistency',
+      'Balancing admin and user views in UI'
     ],
-    date: '2023-11-20',
-    duration: '4 months',
+    date: '2024-03-10',
+    duration: '2 months',
+    category: 'Full Stack'
+  },
+  4: {
+    title: 'Pastel Cityscapes Gallery',
+    description: 'An elegant and visually rich gallery showcasing pastel-themed cityscape illustrations, offering a smooth and aesthetic browsing experience with filtering options and lightbox previews.',
+    image: 'https://images.pexels.com/photos/3225521/pexels-photo-3225521.jpeg?auto=compress&cs=tinysrgb&w=800',
+    technologies: ['React', 'Firebase', 'MongoDB', 'Express', 'Node.js', 'Tailwind CSS'],
+    features: [
+      'Grid layout gallery of illustrations',
+      'Modal preview for full-size viewing',
+      'Category filtering for illustrations',
+      'Responsive and mobile-first design',
+      'Fast loading with lazy loading support'
+    ],
+    challenges: [
+      'Optimizing image load speed',
+      'Maintaining smooth transitions in gallery',
+      'Handling gallery categorization dynamically'
+    ],
+    date: '2024-02-01',
+    duration: '1.5 months',
     category: 'Full Stack'
   }
 };
