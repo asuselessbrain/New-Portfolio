@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Send, CheckCircle, AlertCircle, MapPin } from 'lucide-react';
+import { Mail, Phone, CheckCircle, AlertCircle, MapPin } from 'lucide-react';
+import SubmitContactButton from '../shared/SubmitContactButton';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +29,6 @@ const ContactSection = () => {
 
       const data = await response.json();
 
-      console.log(data)
 
       if (data.success) {
         setSubmitStatus('success');
@@ -192,23 +192,7 @@ const ContactSection = () => {
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="mr-2" size={20} />
-                      Send Message
-                    </>
-                  )}
-                </button>
+                <SubmitContactButton isSubmitting={isSubmitting} />
               </form>
             )}
           </div>

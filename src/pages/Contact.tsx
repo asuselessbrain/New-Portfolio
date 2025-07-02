@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Mail, Phone, MapPin, CheckCircle, AlertCircle } from 'lucide-react';
+import SubmitContactButton from '../shared/SubmitContactButton';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -74,7 +75,7 @@ const Contact = () => {
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
             <p className="text-gray-600 mb-8">
-              I'm currently available for freelance work and full-time opportunities. 
+              I'm currently available for freelance work and full-time opportunities.
               Whether you have a project in mind or just want to connect, I'd love to hear from you.
             </p>
 
@@ -213,23 +214,7 @@ const Contact = () => {
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center font-semibold disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="mr-2" size={20} />
-                        Send Message
-                      </>
-                    )}
-                  </button>
+                  <SubmitContactButton isSubmitting={isSubmitting} />
                 </form>
               </>
             )}
