@@ -72,12 +72,21 @@ const Header = () => {
 
   // Helper to get classes for nav links/buttons
   const navClass = (name: string) =>
-    `transition-colors ${activeSection === name ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'
+    `transition-colors duration-300 ${activeSection === name
+      ? location.pathname === '/' && !isScrolled
+        ? 'text-white font-semibold'
+        : 'text-blue-600 font-semibold'
+      : location.pathname === '/' && !isScrolled
+        ? 'text-gray-200 hover:text-white'
+        : 'text-gray-800 hover:text-blue-600'
     }`;
-
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${location.pathname === '/'
+          ? isScrolled
+            ? 'bg-white/95 backdrop-blur-sm shadow-lg'
+            : 'bg-transparent'
+          : 'bg-white/95 backdrop-blur-sm shadow-md'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -8,11 +8,13 @@ import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import AllBlogs from './pages/AllBlogs';
 import BlogDetail from './pages/BlogDetails';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-50">
+        <ScrollToTop />
         <Header />
         <main>
           <Routes>
